@@ -1,7 +1,7 @@
 let express = require('express');
 let app = express();
 
-const PUBLIC_PATH = '../dist-dev/';
+const PUBLIC_PATH = './public';
 const PORT = 3000;
 
 console.log(`

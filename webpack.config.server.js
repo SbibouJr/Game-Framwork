@@ -23,8 +23,8 @@ module.exports = function(env=false){
       ENTRY_POINT
     ],
     output: {
-      path: env.dev ? PATH_DEV:PATH_PROD,
-      publicPath: env.dev? PATH__INTPUT_DEV:PATH__INTPUT_PROD,
+      path: env.dev ? PATH_OUTPUT_DEV:PATH_OUTPUT_PROD,
+      publicPath: env.dev? PATH_INTPUT_DEV:PATH_INTPUT_PROD,
       filename: FILE_NAME
     },
     resolve: {

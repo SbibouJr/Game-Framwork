@@ -11,7 +11,6 @@ export default function(){
 			window.setTimeout(callback, 1000 / 60);
 		};
 	})();
-	console.log(`animFrame : ${window.requestAnimFrame}`);
 	if (!Date.now) {
 	    Date.now = function now() {
 	        return new Date().getTime();

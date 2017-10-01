@@ -1,3 +1,5 @@
+import imgTest from "../assets/img/marsattakStudioGame.png";
+
 export default class {
 
 	constructor(p_title = "Projet Corporate"){
@@ -17,8 +19,12 @@ export default class {
 			y:550,
 			width:20,
 			height:20,
-			right:true
+			right:true,
 		};
+		let imgExemple = this.createImage(imgTest);
+		imgExemple.scale(0.55);
+		console.log(imgExemple);
+		console.log(imgExemple.width);
 		this.callbackLoop = () => {
 			this.drawRect("yellow", 20, 20, this.canvasElt.width-40, this.canvasElt.height-40, 10, 10);
 			this.drawRect("black", 40, 40, this.canvasElt.width-80, this.canvasElt.height-80);
@@ -41,10 +47,6 @@ export default class {
 				}
 			}
 			this.drawRect("red", exempleAnime.x, exempleAnime.y , exempleAnime.width, exempleAnime.height);
-			let imgExemple = this.createImage("../../assets/img/marsattakStudioGame.png");
-			//imgExemple.width -= 80;
-			//imgExemple.height -= 300;
-			imgExemple.scale(0.55);
 			this.drawImage(imgExemple, this.canvasElt.width/2 - imgExemple.width/2, 40);
 			this.drawText("Game exemple", this.canvasElt.width/2+200, this.canvasElt.height-120,"white", this.FONT_SIZE_MD);
 		};
@@ -60,7 +62,7 @@ export default class {
 
 	createImage(p_src, p_x=false, p_y=false){
 
-		let img = p_x && p_y ? new Image(p_x, p_y) : p_x ? new Image(p_x): new Image();
+		let img =  new Image();
 		img.src = p_src;
 		img.scale = (p_value) =>{
 			let lastWidth = img.width;

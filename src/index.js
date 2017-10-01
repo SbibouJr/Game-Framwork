@@ -1,11 +1,17 @@
 import config from "./config/config";
-import Game from "./class/Game"
+import Game from "./class/Game";
+import "./style.css";
 
 window.addEventListener("load",(e) => {
 
 	config();
+
 	let game = new Game();
-	//game.loop( () => {});
+
+	// UNCOMENT AND START CODING
+	/*game.loop( () => {
+
+	});*/
 
 	game.run();
 

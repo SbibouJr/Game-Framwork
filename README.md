@@ -80,7 +80,7 @@ Once satisfied, you can build the project in the **/dist** folder with it the co
 ```bash
 npm run build
 ```
-Your **/dist** file should look like this :
+Your **/dist** directory should look like this :
 
 ```bash
 server-bundle.js

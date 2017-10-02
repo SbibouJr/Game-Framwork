@@ -28,6 +28,8 @@ window.addEventListener("load",(e) => {
 
 	config();
 
+	// To enable debug mode
+	// new Game(true);
 	let game = new Game();
 
 	// UNCOMMENT AND START CODING
@@ -76,7 +78,7 @@ app.listen(PORT);
 Once satisfied, you can build the project in the **/dist** folder with it the command :
 
 ```bash
-npm build
+npm run build
 ```
 Your **/dist** file should look like this :
 

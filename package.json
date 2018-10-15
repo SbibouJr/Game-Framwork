@@ -2,8 +2,8 @@
   "name": "sbjr-game-framwork",
   "version": "0.1.0",
   "description": "Javascript Game Framwork",
-  "main": "./dist/index.js",
-  "unpkg": "./dist/index.js",
+  "main": "./dist/bundle.js",
+  "unpkg": "./dist/bundle.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build-dev": "webpack --mode=development",

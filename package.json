@@ -1,37 +1,45 @@
 {
-  "name": "testcorporate",
-  "version": "0.0.3",
-  "description": "Un projet NodeJs",
-  "main": "index.html",
+  "name": "sbjr-game-framwork",
+  "version": "0.1.0",
+  "description": "Javascript Game Framwork",
+  "main": "./dist/index.js",
+  "unpkg": "./dist/index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server",
-    "build": "./node_modules/.bin/webpack && ./node_modules/.bin/webpack --config webpack.config.server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server",
+    "build-dev": "webpack --mode=development",
+    "build": "webpack --mode=production"
   },
+  "keywords": [
+    "video-game",
+    "javascript",
+    "framwork"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SbibouJr/TestCorporate.git"
+    "url": "git+https://github.com/SbibouJr/SbJr-Game-Framwork.git"
   },
-  "author": "SbibouJr",
+  "author": "SbibouJr <sbibou.jr@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SbibouJr/TestCorporate/issues"
+    "url": "https://github.com/SbibouJr/SbJr-Game-Framwork/issues"
   },
-  "homepage": "https://github.com/SbibouJr/TestCorporate#readme",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/SbibouJr/SbJr-Game-Framwork#readme",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "file-loader": "^1.1.4",
-    "html-webpack-plugin": "^2.30.1",
-    "style-loader": "^0.18.2",
-    "url-loader": "^0.5.9",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1",
-    "webpack-node-externals": "^1.6.0"
-  },
-  "dependencies": {
-    "express": "^4.16.1"
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "file-loader": "^2.0.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
   }
 }

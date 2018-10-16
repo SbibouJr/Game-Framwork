@@ -3,6 +3,7 @@
 **A javascript game framwork.**
 
 <h2 align="center">Install</h2>
+
 **CDN :**
 ```js
 <script type="text/javascript" src="https://unpkg.com/sbjr-game-framwork@latest"></script>

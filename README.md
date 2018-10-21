@@ -1,8 +1,9 @@
 # Sbjr-Game-Framwork
 
-**A javascript game framwork.**
+**A basic game Framwork written in javascript.**
 
-<h2 align="center">Install</h2>
+## Install
+
 **CDN :**
 ```js
 <script type="text/javascript" src="https://unpkg.com/sbjr-game-framwork@latest"></script>
@@ -12,7 +13,7 @@
 ```bash
 npm i -S sbjr-game-framwork
 ```
-<h2 align="center">Usage</h2>
+## Usage
 
 ```js
 import Game, { FONT_SIZE } from 'sbjr-game-framwork';

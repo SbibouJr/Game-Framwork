@@ -1,3 +1,4 @@
+import style from '../assets/css/style.css';
 import imgTest from '../assets/img/marsattakStudioGame.png';
 import _initConfig from '../config/game';
 import { FONT_SIZE, FONT_TYPE } from '../config/texts';
@@ -142,6 +143,11 @@ class Game {
 	// ********************************************
 
 	_load() {
+		// Apply style
+		const appStyleElt = window.document.createElement('style');
+		appStyleElt.type = 'text/css';
+		appStyleElt.innerText = style;
+		window.document.head.appendChild(appStyleElt);
 		this._contextElt.textBaseline = 'top';
 	}
 

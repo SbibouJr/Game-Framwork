@@ -8,7 +8,8 @@
     "start": "webpack-dev-server",
     "build-doc": "esdoc",
     "build-dev": "webpack --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "publish-package": "rm -rf ./dist ./node_modules && npm i && npm run build && npm run publish"
   },
   "keywords": [
     "video-game",
@@ -39,8 +40,9 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "file-loader": "^2.0.0",
-    "mini-css-extract-plugin": "^0.4.4",
     "style-loader": "^0.23.1",
+    "to-string-loader": "^1.1.5",
+    "url-loader": "^1.1.2",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"

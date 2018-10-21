@@ -5,10 +5,9 @@
   "main": "./dist/bundle.js",
   "unpkg": "./dist/bundle.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build-doc": "esdoc",
-    "build-dev": "webpack --mode=development",
+    "start": "webpack --watch",
     "build": "webpack --mode=production",
+    "build-doc": "esdoc",
     "publish-package": "rm -rf ./dist ./node_modules && npm i && npm run build && npm run publish"
   },
   "keywords": [
@@ -40,7 +39,6 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "file-loader": "^2.0.0",
-    "style-loader": "^0.23.1",
     "to-string-loader": "^1.1.5",
     "url-loader": "^1.1.2",
     "webpack": "^4.20.2",

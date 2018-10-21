@@ -8,7 +8,7 @@
     "start": "webpack --watch",
     "build": "webpack --mode=production",
     "build-doc": "esdoc",
-    "publish-package": "rm -rf ./dist ./node_modules && npm i && npm run build && npm run publish"
+    "publish-package": "rm -rf ./dist ./node_modules && npm i && npm run build && npm publish"
   },
   "keywords": [
     "video-game",

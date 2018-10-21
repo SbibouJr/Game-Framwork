@@ -1,13 +1,14 @@
 {
   "name": "sbjr-game-framwork",
-  "version": "0.1.0",
-  "description": "Javascript Game Framwork",
+  "version": "0.1.1",
+  "description": "A basic game framwork written in javascript.",
   "main": "./dist/bundle.js",
   "unpkg": "./dist/bundle.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build-dev": "webpack --mode=development",
-    "build": "webpack --mode=production"
+    "start": "webpack --watch",
+    "build": "webpack --mode=production",
+    "build-doc": "esdoc",
+    "publish-package": "rm -rf ./dist ./node_modules && npm i && npm run build && npm publish"
   },
   "keywords": [
     "video-game",
@@ -32,14 +33,15 @@
     "@babel/preset-env": "^7.1.0",
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.0",
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^5.7.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "file-loader": "^2.0.0",
-    "mini-css-extract-plugin": "^0.4.4",
-    "style-loader": "^0.23.1",
+    "to-string-loader": "^1.1.5",
+    "url-loader": "^1.1.2",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-cli": "^3.1.2"
   }
 }

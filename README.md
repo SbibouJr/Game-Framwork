@@ -2,6 +2,8 @@
 
 **A basic game framwork written in javascript.**
 
+[Documentation](https://sbjr-game-framwork-docs.netlify.com/)
+
 ## Install
 
 **CDN :**

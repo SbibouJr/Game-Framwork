@@ -1,15 +1,9 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src',
   mode: 'production',
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
+  plugins: [],
   module: {
     rules: [
       {
@@ -18,23 +12,25 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          'css-loader',
-        ]
-      },
-      {
         test: /\.(ico|jpe?g|png|gif)$/,
         loaders: [{
-          loader: 'file-loader',
+          loader: 'url-loader',
           options: {
-            name: 'assets/img/[path][name].[ext]',
-            context: './src/assets/img/',
+            name: '[path][name].[ext]',
+            context: './src/assets/',
           }
         }],
+      },
+      {
+        test: /\.css$/,
+        loaders: [
+          {
+            loader: 'to-string-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+        ]
       },
     ],
   },

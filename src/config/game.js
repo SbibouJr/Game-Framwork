@@ -1,20 +1,20 @@
-const generateScreen = (containerTag, canvasTag, fullscreenTag, createContainer) => {
+const generateScreen = (containerId, canvasId, fullscreenId, createContainer) => {
 	const canvasElt = document.createElement('canvas');
-	canvasElt.id = canvasTag;
+	canvasElt.id = canvasId;
 	canvasElt.height = '768';
 	canvasElt.width = '1280';
 	if (createContainer) {
 		const containerElt = document.createElement('div');
-		containerElt.id = containerTag;
+		containerElt.id = containerId;
 		containerElt.appendChild(canvasElt);
 		document.body.appendChild(containerElt);
 	} else {
-		const containerElt = document.getElementById(containerTag);
-		containerElt.id = containerTag;
+		const containerElt = document.getElementById(containerId);
+		containerElt.id = containerId;
 		containerElt.appendChild(canvasElt);
 	}
 	const fullscreenElt = document.createElement('span');
-	fullscreenElt.id = fullscreenTag;
+	fullscreenElt.id = fullscreenId;
 	document.body.appendChild(fullscreenElt);
 };
 
@@ -32,8 +32,8 @@ const infiniteLoop = () => {
 	}
 };
 
-const maximizeScreen = (containerTag, canvasTag) => {
-	const canvasElt = document.getElementById(canvasTag);
+const maximizeScreen = (containerId, canvasId) => {
+	const canvasElt = document.getElementById(canvasId);
 	const initialWidth = canvasElt.offsetWidth;
 	const initialHeight = canvasElt.offsetHeight;
 	if (document.body.clientWidth * (initialHeight / initialWidth) < document.body.clientHeight) {
@@ -50,10 +50,10 @@ const datePolyfill = () => {
 };
 
 
-const screenResizeEvents = (containerTag, canvasTag, fullscreenTag) => {
-	const canvasElt = document.getElementById(canvasTag);
-	const consoleElt = document.getElementById(containerTag);
-	const fullscreenElt = document.getElementById(fullscreenTag);
+const screenResizeEvents = (containerId, canvasId, fullscreenId) => {
+	const canvasElt = document.getElementById(canvasId);
+	const consoleElt = document.getElementById(containerId);
+	const fullscreenElt = document.getElementById(fullscreenId);
 	const initialWidth = canvasElt.offsetWidth;
 	const initialHeight = canvasElt.offsetHeight;
 	// ********** Resize **********
@@ -116,13 +116,21 @@ const screenResizeEvents = (containerTag, canvasTag, fullscreenTag) => {
 	});
 };
 
-const initConfig = (containerTag, canvasTag, fullscreenTag, createContainer = false) => {
+/**
+ * Initializes the general configuration of the engine.
+ * View, screen, infinite loop...
+ * @param {string} containerId - Id of the canvas container
+ * @param {string} canvasId - Id of the canvas
+ * @param {string} fullscreenId - Id of the fullscreen button element
+ * @param {boolean} [createContainer = false] - If true, the engine will generate a container in the body
+*/
+const _initConfig = (containerId, canvasId, fullscreenId, createContainer = false) => {
 	/* ******************* GLOBAL FUNCTION *********************** */
-	generateScreen(containerTag, canvasTag, fullscreenTag, createContainer);
+	generateScreen(containerId, canvasId, fullscreenId, createContainer);
 	infiniteLoop();
 	datePolyfill();
-	maximizeScreen(containerTag, canvasTag);
-	screenResizeEvents(containerTag, canvasTag, fullscreenTag);
+	maximizeScreen(containerId, canvasId);
+	screenResizeEvents(containerId, canvasId, fullscreenId);
 };
 
-export default initConfig;
+export default _initConfig;

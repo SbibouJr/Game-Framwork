@@ -1,7 +1,7 @@
 {
   "name": "sbjr-game-framwork",
   "version": "0.1.0",
-  "description": "Javascript Game Framwork",
+  "description": "A basic game framwork written in javascript.",
   "main": "./dist/bundle.js",
   "unpkg": "./dist/bundle.js",
   "scripts": {

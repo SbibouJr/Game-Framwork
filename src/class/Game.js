@@ -126,7 +126,7 @@ class Game {
 	 * @param {function()} callback - function to be added to the engine
 	*/
 	loop(callback) {
-		this._callbackLoop = callback;
+		this._loop = callback;
 	}
 
 	/**
@@ -145,7 +145,7 @@ class Game {
 		this._contextElt.textBaseline = 'top';
 	}
 
-	_callbackLoop() {
+	_loop() {
 		const imgExemple = Game.createImage(imgTest);
 		this.drawImage(imgExemple, this._canvasElt.width / 2 - imgExemple.width / 2, 0);
 		this.drawText(this._title, 0, this._canvasElt.height - 120, 'white', FONT_SIZE.MD);
@@ -154,7 +154,7 @@ class Game {
 	_mainLoop() {
 		this._contextElt.save();
 		this._contextElt.clearRect(0, 0, this._canvasElt.width, this._canvasElt.height);
-		this._callbackLoop();
+		this._loop();
 		// DEBUG MESSAGE
 		if (this._debugMode) {
 			this.drawRect('white', 0, 0, this._canvasElt.width, 100, 0.8);
@@ -162,7 +162,7 @@ class Game {
 			this.drawText(`Offset height : ${this._canvasElt.offsetHeight}`, 10, 50, 'black', FONT_SIZE.XS);
 		}
 		this._contextElt.restore();
-		window.requestAnimFrame(() => { this._mainLoop(this._callbackLoop); });
+		window.requestAnimFrame(() => { this._mainLoop(this._loop); });
 	}
 }
 
